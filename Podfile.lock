@@ -1,0 +1,49 @@
+PODS:
+  - ObjectMapper (4.2.0)
+  - ReactiveCoordinator (4.0.0):
+    - RxSwift
+  - RxBlocking (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - RxTest (6.5.0):
+    - RxSwift (= 6.5.0)
+  - SwiftLint (0.47.1)
+
+DEPENDENCIES:
+  - ObjectMapper
+  - ReactiveCoordinator (= 4.0.0)
+  - RxBlocking (= 6.5.0)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - RxTest (= 6.5.0)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - ObjectMapper
+    - ReactiveCoordinator
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  ReactiveCoordinator: 411fce7da599bbbb56d5ad9f3abe1e532e58a64f
+  RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+
+PODFILE CHECKSUM: 95f1dc6583e2eca7d0485581d33ab027d2e6fb99
+
+COCOAPODS: 1.11.3

@@ -5,7 +5,7 @@
 //  Created by Dawid Karpiński on 06/07/2022.
 //
 
-protocol IViewModel {
+protocol ViewModelType {
     associatedtype Input
     associatedtype Output
     
