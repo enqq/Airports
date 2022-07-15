@@ -27,7 +27,7 @@ class AirportListViewController: UIViewController {
 // MARK: - Binding
 extension AirportListViewController {
     
-    private func bindNaviItem(){
+    private func bindNaviItem() {
         selectButton.rx.tap
             .bind(to: viewModel.input.selectCity)
             .disposed(by: disposeBag)

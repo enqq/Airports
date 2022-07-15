@@ -11,22 +11,21 @@ struct CityModel: Mappable {
     init?(map: Map) { }    
     
     mutating func mapping(map: Map) {
-        city_id <- map["city_id"]
-        iata_code <- map["iata_code"]
-        country_iso2 <- map["country_iso2"]
+        cityId <- map["city_id"]
+        iataCode <- map["iata_code"]
+        countryIso2 <- map["country_iso2"]
         latitude <- map["latitude"]
         longitude <- map["longitude"]
-        city_name <- map["city_name"]
+        cityName <- map["city_name"]
         timezone <- map["timezone"]
     }
     
-    
-    var city_id: Int!
-    var iata_code: String?
-    var country_iso2: String?
+    var cityId: Int!
+    var iataCode: String?
+    var countryIso2: String?
     var latitude: Float!
     var longitude: Float!
-    var city_name: String?
+    var cityName: String?
     var timezone: String?
     
 }

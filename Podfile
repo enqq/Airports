@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '15.5'
 
 target 'Airports' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -10,6 +10,7 @@ target 'Airports' do
     pod 'RxCocoa', '6.5.0'
     pod 'ReactiveCoordinator', '4.0.0'
     pod 'ObjectMapper'
+    pod 'SwiftLint'
 
   target 'AirportsTests' do
     inherit! :search_paths

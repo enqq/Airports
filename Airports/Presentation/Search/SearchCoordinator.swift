@@ -12,7 +12,7 @@ enum SearchCoordinatorResult {
     case cancel
 }
 
-class SearchCoordinator : BaseCoordinator<SearchCoordinatorResult>, ICoordinatorInit {
+class SearchCoordinator: BaseCoordinator<SearchCoordinatorResult>, ICoordinatorInit {
     
     private let rootViewController: UIViewController
     required init(rootViewController: UIViewController) {
@@ -22,8 +22,9 @@ class SearchCoordinator : BaseCoordinator<SearchCoordinatorResult>, ICoordinator
     override func start() -> Observable<SearchCoordinatorResult> {
         
         let viewController = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-
+        let viewModel = SearchViewModel.init(repository: FlighLabsService())
         
+        viewController.viewModel = viewModel
         rootViewController.navigationController?.pushViewController(viewController, animated: true)
         return Observable.never()
     }

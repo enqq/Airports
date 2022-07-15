@@ -6,24 +6,49 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    var viewModel: SearchViewModel!
+    private let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var citiesTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupBindings()
+        tableViewBindings()
+    }
+}
+
+// MARK: - ViewController bind with ViewModel
+extension SearchViewController {
+    func setupBindings() {
+        searchBar.rx.text
+            .orEmpty
+            .bind(to: viewModel.input.searchText)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Get data to TableView
+extension SearchViewController {
+    func tableViewBindings() {
+        registerCell()
+        
+        viewModel.output.cities
+            .bind(to: citiesTableView.rx.items(cellIdentifier: "cityCell", cellType: CityTableViewCell.self)) { ( _, city, cell ) in
+                cell.setCell(country: city.iataCode!, city: city.cityName!)
+            }.disposed(by: disposeBag)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func registerCell() {
+        let nib = UINib(nibName: "CityTableViewCell", bundle: nil)
+        self.citiesTableView.register(nib, forCellReuseIdentifier: "cityCell")
     }
-    */
-
 }

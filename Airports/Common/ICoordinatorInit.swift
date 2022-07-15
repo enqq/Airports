@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol ICoordinatorInit{
+protocol ICoordinatorInit {
     init(rootViewController: UIViewController)
 }

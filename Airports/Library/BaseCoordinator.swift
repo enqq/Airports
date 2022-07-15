@@ -38,4 +38,3 @@ class BaseCoordinator<ResultType> {
             fatalError("start() method must be implemented")
         }
 }
-

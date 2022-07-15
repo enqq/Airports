@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.6.1)
   - ObjectMapper (4.2.0)
   - ReactiveCoordinator (4.0.0):
     - RxSwift
@@ -15,6 +16,7 @@ PODS:
   - SwiftLint (0.47.1)
 
 DEPENDENCIES:
+  - Alamofire
   - ObjectMapper
   - ReactiveCoordinator (= 4.0.0)
   - RxBlocking (= 6.5.0)
@@ -25,6 +27,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ObjectMapper
     - ReactiveCoordinator
     - RxBlocking
@@ -35,6 +38,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   ReactiveCoordinator: 411fce7da599bbbb56d5ad9f3abe1e532e58a64f
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
 
-PODFILE CHECKSUM: 95f1dc6583e2eca7d0485581d33ab027d2e6fb99
+PODFILE CHECKSUM: 1c8421b5a314f37ca14345414550dd5363d90c1f
 
 COCOAPODS: 1.11.3

@@ -11,7 +11,7 @@ open class NetworkManager: Networking {
     
     private let session: URLSession
     
-    init(session: URLSession = URLSession.shared){
+    init(session: URLSession = URLSession.shared) {
         self.session = session
     }
     
@@ -31,6 +31,4 @@ open class NetworkManager: Networking {
                 return Observable.just(result)
             }
     }
-    
-    
 }

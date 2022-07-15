@@ -7,7 +7,7 @@
 
 import RxSwift
 
-class AirportsListCoordinator : BaseCoordinator<Void>, ICoordinatorInit {
+class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
     
     private let rootController: UIViewController
     
@@ -25,8 +25,6 @@ class AirportsListCoordinator : BaseCoordinator<Void>, ICoordinatorInit {
             .subscribe(onNext: { [weak self] _ in
                _ = self?.showSearchVC()
             }).disposed(by: disposeBag)
-        
-        
         return Observable.never()
     }
     

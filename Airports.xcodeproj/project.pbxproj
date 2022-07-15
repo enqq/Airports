@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15F071A1431C94BF3169C373 /* Pods_Airports_AirportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44D90242ED98C512AD31366 /* Pods_Airports_AirportsUITests.framework */; };
+		702B8B69288198E400F89053 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B8B68288198E400F89053 /* SearchViewModel.swift */; };
+		702E99D728814DCA002C68EB /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E99D628814DCA002C68EB /* SearchTest.swift */; };
 		704A2E402876D9D8003F98D0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E3F2876D9D8003F98D0 /* SearchViewController.swift */; };
 		704A2E422876D9F0003F98D0 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E412876D9F0003F98D0 /* SearchCoordinator.swift */; };
 		704A2E442876E4FC003F98D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E432876E4FC003F98D0 /* NetworkManager.swift */; };
@@ -15,6 +17,8 @@
 		704A2E482876EF70003F98D0 /* FlightLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E472876EF70003F98D0 /* FlightLabsService.swift */; };
 		704A2E4A2876F093003F98D0 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E492876F093003F98D0 /* CityModel.swift */; };
 		704A2E502876F97C003F98D0 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A2E4F2876F97C003F98D0 /* NetworkTest.swift */; };
+		705ED0D7287D87F500B1038C /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705ED0D5287D87F500B1038C /* CityTableViewCell.swift */; };
+		705ED0D8287D87F500B1038C /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 705ED0D6287D87F500B1038C /* CityTableViewCell.xib */; };
 		706B807E2875A159007B675B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B807D2875A159007B675B /* AppDelegate.swift */; };
 		706B80852875A159007B675B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706B80832875A159007B675B /* Main.storyboard */; };
 		706B80872875A15B007B675B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706B80862875A15B007B675B /* Assets.xcassets */; };
@@ -28,7 +32,7 @@
 		708F2F712875A8FC009DF810 /* AirportsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F2F702875A8FC009DF810 /* AirportsListCoordinator.swift */; };
 		708F2F742875A9F9009DF810 /* ICoordinatorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F2F732875A9F9009DF810 /* ICoordinatorInit.swift */; };
 		708F2F762875AC93009DF810 /* AirportsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F2F752875AC93009DF810 /* AirportsListViewModel.swift */; };
-		708F2F782875ACAC009DF810 /* IViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F2F772875ACAC009DF810 /* IViewModel.swift */; };
+		708F2F782875ACAC009DF810 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F2F772875ACAC009DF810 /* ViewModelType.swift */; };
 		7176B78DEBF4821BAB273F59 /* Pods_Airports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7A69567B8EB2EFBA94AF7 /* Pods_Airports.framework */; };
 		E339C0F6855398D8F120A773 /* Pods_AirportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA6DC73586CD41409EC97E /* Pods_AirportsTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,8 @@
 		300F03D38F58F50412A1A204 /* Pods-Airports-AirportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airports-AirportsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Airports-AirportsUITests/Pods-Airports-AirportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FFA6DC73586CD41409EC97E /* Pods_AirportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		620ADD71BF6207D58A1E25F9 /* Pods-AirportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirportsTests.release.xcconfig"; path = "Target Support Files/Pods-AirportsTests/Pods-AirportsTests.release.xcconfig"; sourceTree = "<group>"; };
+		702B8B68288198E400F89053 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		702E99D628814DCA002C68EB /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
 		704A2E3F2876D9D8003F98D0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		704A2E412876D9F0003F98D0 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		704A2E432876E4FC003F98D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 		704A2E472876EF70003F98D0 /* FlightLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLabsService.swift; sourceTree = "<group>"; };
 		704A2E492876F093003F98D0 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		704A2E4F2876F97C003F98D0 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
+		705ED0D5287D87F500B1038C /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		705ED0D6287D87F500B1038C /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		706B807A2875A159007B675B /* Airports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706B807D2875A159007B675B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706B80842875A159007B675B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +87,7 @@
 		708F2F702875A8FC009DF810 /* AirportsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsListCoordinator.swift; sourceTree = "<group>"; };
 		708F2F732875A9F9009DF810 /* ICoordinatorInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICoordinatorInit.swift; sourceTree = "<group>"; };
 		708F2F752875AC93009DF810 /* AirportsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsListViewModel.swift; sourceTree = "<group>"; };
-		708F2F772875ACAC009DF810 /* IViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewModel.swift; sourceTree = "<group>"; };
+		708F2F772875ACAC009DF810 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		A44D90242ED98C512AD31366 /* Pods_Airports_AirportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airports_AirportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06DDFC54C738899363941C1 /* Pods-Airports-AirportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airports-AirportsUITests.release.xcconfig"; path = "Target Support Files/Pods-Airports-AirportsUITests/Pods-Airports-AirportsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C19E7BB3F5FEFF273D49D043 /* Pods-Airports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airports.debug.xcconfig"; path = "Target Support Files/Pods-Airports/Pods-Airports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		705ED0D4287D87D600B1038C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				705ED0D5287D87F500B1038C /* CityTableViewCell.swift */,
+				705ED0D6287D87F500B1038C /* CityTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		706B80712875A159007B675B = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +174,7 @@
 			children = (
 				706B80942875A15B007B675B /* AirportsTests.swift */,
 				704A2E4F2876F97C003F98D0 /* NetworkTest.swift */,
+				702E99D628814DCA002C68EB /* SearchTest.swift */,
 			);
 			path = AirportsTests;
 			sourceTree = "<group>";
@@ -236,8 +254,10 @@
 		708F2F682875A709009DF810 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				705ED0D4287D87D600B1038C /* Cell */,
 				704A2E3F2876D9D8003F98D0 /* SearchViewController.swift */,
 				704A2E412876D9F0003F98D0 /* SearchCoordinator.swift */,
+				702B8B68288198E400F89053 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -246,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				708F2F732875A9F9009DF810 /* ICoordinatorInit.swift */,
-				708F2F772875ACAC009DF810 /* IViewModel.swift */,
+				708F2F772875ACAC009DF810 /* ViewModelType.swift */,
 				704A2E452876E51A003F98D0 /* Networking.swift */,
 			);
 			path = Common;
@@ -283,6 +303,7 @@
 			buildConfigurationList = 706B80A42875A15B007B675B /* Build configuration list for PBXNativeTarget "Airports" */;
 			buildPhases = (
 				50D5F74068D5CD3A883D1619 /* [CP] Check Pods Manifest.lock */,
+				70AECF50287CA5DA005CB773 /* Run SwiftLint */,
 				706B80762875A159007B675B /* Sources */,
 				706B80772875A159007B675B /* Frameworks */,
 				706B80782875A159007B675B /* Resources */,
@@ -386,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				706B808A2875A15B007B675B /* LaunchScreen.storyboard in Resources */,
+				705ED0D8287D87F500B1038C /* CityTableViewCell.xib in Resources */,
 				706B80872875A15B007B675B /* Assets.xcassets in Resources */,
 				706B80852875A159007B675B /* Main.storyboard in Resources */,
 			);
@@ -464,6 +486,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		70AECF50287CA5DA005CB773 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		8708373110CA1647FEC23856 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,16 +574,18 @@
 			files = (
 				704A2E442876E4FC003F98D0 /* NetworkManager.swift in Sources */,
 				708F2F712875A8FC009DF810 /* AirportsListCoordinator.swift in Sources */,
+				702B8B69288198E400F89053 /* SearchViewModel.swift in Sources */,
 				704A2E402876D9D8003F98D0 /* SearchViewController.swift in Sources */,
 				704A2E462876E51A003F98D0 /* Networking.swift in Sources */,
 				704A2E422876D9F0003F98D0 /* SearchCoordinator.swift in Sources */,
 				704A2E4A2876F093003F98D0 /* CityModel.swift in Sources */,
-				708F2F782875ACAC009DF810 /* IViewModel.swift in Sources */,
+				708F2F782875ACAC009DF810 /* ViewModelType.swift in Sources */,
 				706B807E2875A159007B675B /* AppDelegate.swift in Sources */,
 				708F2F762875AC93009DF810 /* AirportsListViewModel.swift in Sources */,
 				708F2F6A2875A73D009DF810 /* AirportsListViewController.swift in Sources */,
 				708F2F6F2875A7FC009DF810 /* AppCoordinator.swift in Sources */,
 				704A2E482876EF70003F98D0 /* FlightLabsService.swift in Sources */,
+				705ED0D7287D87F500B1038C /* CityTableViewCell.swift in Sources */,
 				708F2F742875A9F9009DF810 /* ICoordinatorInit.swift in Sources */,
 				708F2F6C2875A792009DF810 /* BaseCoordinator.swift in Sources */,
 			);
@@ -553,6 +595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702E99D728814DCA002C68EB /* SearchTest.swift in Sources */,
 				704A2E502876F97C003F98D0 /* NetworkTest.swift in Sources */,
 				706B80952875A15B007B675B /* AirportsTests.swift in Sources */,
 			);

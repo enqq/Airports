@@ -8,21 +8,21 @@
 import Foundation
 import RxSwift
 
-final class AirportsListViewModel : IViewModel {
+final class AirportsListViewModel: ViewModelType {
     private var service: FlighLabsService!
     
     var input: Input
     
     var output: Output
     
-    struct Input{
+    struct Input {
         let selectCity = PublishSubject<Void>()
     }
     
     struct Output {
         
     }
-    init(service: FlighLabsService = FlighLabsService()){
+    init(service: FlighLabsService = FlighLabsService()) {
         self.service = service
         
         self.output = Output()

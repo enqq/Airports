@@ -12,7 +12,7 @@ class AppCoordinator: BaseCoordinator<Void> {
    
     var window: UIWindow
     
-    init(window: UIWindow){
+    init(window: UIWindow) {
         self.window = window
     }
     
