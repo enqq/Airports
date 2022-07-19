@@ -21,15 +21,24 @@ class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
         let viewController = rootController as! AirportListViewController
         viewController.viewModel = viewModel
         
-        viewModel.input.selectCity
-            .subscribe(onNext: { [weak self] _ in
-               _ = self?.showSearchVC()
-            }).disposed(by: disposeBag)
+        viewModel.output.selectButton
+            .flatMapLatest({ [weak self] _  -> Observable<AirportModel> in
+                guard let `self` = self else { return .empty() }
+                return self.showSearchVC()
+            })
+            .bind(to: viewModel.input.selectAirport)
+            .disposed(by: disposeBag)
+        
         return Observable.never()
     }
     
-    private func showSearchVC() -> Observable<SearchCoordinatorResult> {
+    private func showSearchVC() -> Observable<AirportModel> {
         let searchCoordinator = SearchCoordinator(rootViewController: rootController)
         return coordinate(to: searchCoordinator)
+            .map({ result in
+                switch result {
+                case .findItem(let airport): return airport
+                }
+            })
     }
 }

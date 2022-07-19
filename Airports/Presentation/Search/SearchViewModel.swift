@@ -7,6 +7,7 @@
 
 import RxSwift
 import Combine
+import RxCocoa
 
 final class SearchViewModel: ViewModelType {
     
@@ -15,25 +16,30 @@ final class SearchViewModel: ViewModelType {
     
     struct Input {
         let searchText: AnyObserver<String>
+        let selectAirport: AnyObserver<AirportModel>
     }
     
     struct Output {
-        let cities: Observable<[CityModel]>
+        let airports: Driver<[AirportModel]>
+        let didSelectAirport: Observable<AirportModel>
     }
     
     private let searchSubject = PublishSubject<String>()
+    private let selectSubject = PublishSubject<AirportModel>()
     
     init(repository: FlighLabsService) {
         
-        let cityArray = searchSubject
+        let airportsDriver = searchSubject
             .distinctUntilChanged()
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-            .flatMapLatest({ text -> Observable<[CityModel]> in
-                return repository.getCity(text)
+            .debounce(.milliseconds(200), scheduler: MainScheduler.instance)
+            .flatMapLatest({ text -> Observable<[AirportModel]> in
+                return repository.getAirports(text)
             })
+            .asDriver(onErrorJustReturn: [])
         
-        self.input = Input(searchText: searchSubject.asObserver())
-        self.output = Output(cities: cityArray)
+        self.input = Input(searchText: searchSubject.asObserver(), selectAirport: selectSubject.asObserver())
+        self.output = Output(airports: airportsDriver, didSelectAirport: selectSubject.asObservable())
+    
     }
     
 }

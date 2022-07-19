@@ -8,8 +8,7 @@
 import RxSwift
 
 enum SearchCoordinatorResult {
-    case findItem(String)
-    case cancel
+    case findItem(AirportModel)
 }
 
 class SearchCoordinator: BaseCoordinator<SearchCoordinatorResult>, ICoordinatorInit {
@@ -24,9 +23,15 @@ class SearchCoordinator: BaseCoordinator<SearchCoordinatorResult>, ICoordinatorI
         let viewController = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         let viewModel = SearchViewModel.init(repository: FlighLabsService())
         
+        let findItem = viewModel.output.didSelectAirport.map({ SearchCoordinatorResult.findItem($0)})
+        
         viewController.viewModel = viewModel
         rootViewController.navigationController?.pushViewController(viewController, animated: true)
-        return Observable.never()
+        return findItem
+            .take(1)
+            .do(onNext: {[weak self] _ in
+                self?.rootViewController.navigationController?.popViewController(animated: true)
+            })
     }
 
 }

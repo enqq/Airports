@@ -35,20 +35,29 @@ extension SearchViewController {
     }
 }
 
-// MARK: - Get data to TableView
+// MARK: - Get data & Select Item - TableView
 extension SearchViewController {
     func tableViewBindings() {
         registerCell()
+        tapTableRow()
         
-        viewModel.output.cities
-            .bind(to: citiesTableView.rx.items(cellIdentifier: "cityCell", cellType: CityTableViewCell.self)) { ( _, city, cell ) in
-                cell.setCell(country: city.iataCode!, city: city.cityName!)
-            }.disposed(by: disposeBag)
+        viewModel.output.airports
+            .drive( citiesTableView.rx.items(cellIdentifier: "airportCell", cellType: AirportTableViewCell.self)) { ( _, airport, cell ) in
+                cell.setCell(airport.iataCode!, "dd", airport.airportName!, airport.countryIso2!)
+            }
+            .disposed(by: disposeBag)
         
     }
     
+    /// Bind select cell to ViewModel
+    func tapTableRow() {
+        citiesTableView.rx.modelSelected(AirportModel.self)
+            .bind(to: viewModel.input.selectAirport)
+            .disposed(by: disposeBag)
+    }
+    
     func registerCell() {
-        let nib = UINib(nibName: "CityTableViewCell", bundle: nil)
-        self.citiesTableView.register(nib, forCellReuseIdentifier: "cityCell")
+        let nib = UINib(nibName: "AirportTableViewCell", bundle: nil)
+        self.citiesTableView.register(nib, forCellReuseIdentifier: "airportCell")
     }
 }

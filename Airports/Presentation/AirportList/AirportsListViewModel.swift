@@ -5,28 +5,40 @@
 //  Created by Dawid Karpiński on 06/07/2022.
 //
 
-import Foundation
 import RxSwift
+import RxCocoa
 
 final class AirportsListViewModel: ViewModelType {
-    private var service: FlighLabsService!
-    
+        
     var input: Input
     
     var output: Output
     
     struct Input {
-        let selectCity = PublishSubject<Void>()
+        /// Taped select button
+        let selectButton: AnyObserver<Void>
+        /// Return current set airport
+        let selectAirport: AnyObserver<AirportModel>
     }
     
     struct Output {
-        
+        /// Emits taped Select Button to display SearchView
+        let selectButton: Observable<Void>
+        /// Get Current Airport
+        let selectCity: Driver<AirportModel>
     }
-    init(service: FlighLabsService = FlighLabsService()) {
-        self.service = service
+    
+    private let selectButtonPublish = PublishSubject<Void>()
+    private let selectPublish = PublishSubject<AirportModel>()
+    
+    init(repository: FlighLabsService = FlighLabsService()) {
         
-        self.output = Output()
-        self.input = Input()
+        let selectDriver = selectPublish
+            .asDriver(onErrorJustReturn: AirportModel.init())
+            
+        self.output = Output(selectButton: selectButtonPublish.asObservable(), selectCity: selectDriver)
+        self.input = Input(selectButton: selectButtonPublish.asObserver(), selectAirport: selectPublish.asObserver())
+        
     }
 
 }
