@@ -1,5 +1,5 @@
 //
-//  AirportsListCoordinator.swift
+//  AirportsCoordinator.swift
 //  Airports
 //
 //  Created by Dawid Karpiński on 06/07/2022.
@@ -7,7 +7,7 @@
 
 import RxSwift
 
-class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
+class AirportsCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
     
     private let rootController: UIViewController
     
@@ -17,8 +17,8 @@ class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
     
     override func start() -> Observable<Void> {
         
-        let viewModel = AirportsListViewModel()
-        let viewController = rootController as! AirportListViewController
+        let viewModel = AirportsViewModel()
+        let viewController = rootController as! AirportViewController
         viewController.viewModel = viewModel
         
         viewModel.output.selectButton
@@ -29,6 +29,13 @@ class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
             .bind(to: viewModel.input.selectAirport)
             .disposed(by: disposeBag)
         
+        viewModel.output.showFlights
+            .withLatestFrom(viewModel.output.selectCity.filter({$0.icaoCode != nil}).map({ $0.icaoCode! }))
+            .subscribe(onNext: { [weak self] icao in
+              _ = self?.showFlightsVC(icaoCode: icao)
+            })
+            .disposed(by: disposeBag)
+           
         return Observable.never()
     }
     
@@ -40,5 +47,12 @@ class AirportsListCoordinator: BaseCoordinator<Void>, ICoordinatorInit {
                 case .findItem(let airport): return airport
                 }
             })
+    }
+    
+    private func showFlightsVC(icaoCode: String) -> Observable<Void> {
+        let fligtsViewModel = FlightsViewModel(repository: FlighLabsService(), icaoCode: icaoCode)
+        let fligtsCoordinator = FlightsCoordinator(rootViewController: rootController)
+        fligtsCoordinator.viewModel = fligtsViewModel
+        return coordinate(to: fligtsCoordinator)
     }
 }

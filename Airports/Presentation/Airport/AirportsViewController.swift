@@ -1,5 +1,5 @@
 //
-//  AirportsListViewController.swift
+//  AirportsViewController.swift
 //  Airports
 //
 //  Created by Dawid Karpiński on 06/07/2022.
@@ -9,9 +9,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class AirportListViewController: UIViewController {
+class AirportViewController: UIViewController {
 
-    @IBOutlet weak var airportsCollectionView: UICollectionView!
+    @IBOutlet weak var fligtsButton: UIButton!
     @IBOutlet weak var airportNameLabel: UILabel!
     @IBOutlet weak var iataCodeLabel: UILabel!
     @IBOutlet weak var icaoCodeLabel: UILabel!
@@ -21,7 +21,7 @@ class AirportListViewController: UIViewController {
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var selectButton: UIButton!
     
-    var viewModel: AirportsListViewModel!
+    var viewModel: AirportsViewModel!
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class AirportListViewController: UIViewController {
 }
 
 // MARK: - Binding with navigation
-extension AirportListViewController {
+extension AirportViewController {
     private func bindNaviItem() {
         selectButton.rx.tap
             .bind(to: viewModel.input.selectButton)
@@ -43,7 +43,7 @@ extension AirportListViewController {
 }
 
 // MARK: - SetupView
-extension AirportListViewController {
+extension AirportViewController {
     private func bindSetup() {
 
         viewModel.output.selectCity
@@ -79,6 +79,10 @@ extension AirportListViewController {
         viewModel.output.selectCity
             .map({ $0.longitude })
             .drive(longitudeLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        fligtsButton.rx.tap
+            .bind(to: viewModel.input.fligtsButton)
             .disposed(by: disposeBag)
         
     }

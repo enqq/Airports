@@ -10,7 +10,6 @@ import UIKit
 class AirportTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iataCodeLabel: UILabel!
-    @IBOutlet weak var timezoneLabel: UILabel!
     @IBOutlet weak var airportNameLabel: UILabel!
     @IBOutlet weak var countryCodeLabel: UILabel!
     
@@ -25,9 +24,8 @@ class AirportTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ iataCode: String, _ timezone: String?, _ airportName: String, _ countryCode: String) {
+    func setCell(_ iataCode: String, _ airportName: String, _ countryCode: String) {
         self.iataCodeLabel.text = iataCode
-        //self.timezoneLabel.text = timezone
         self.airportNameLabel.text = airportName
         self.countryCodeLabel.text = countryCode
     }

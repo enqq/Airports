@@ -17,10 +17,10 @@ class AppCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<Void> {
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AirportsListViewController") as! AirportListViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "AirportsViewController") as! AirportViewController
         
         let navigationController = UINavigationController.init(rootViewController: viewController)
-        let coordinator = AirportsListCoordinator(rootViewController: navigationController.viewControllers[0])
+        let coordinator = AirportsCoordinator(rootViewController: navigationController.viewControllers[0])
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         

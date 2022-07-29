@@ -43,7 +43,7 @@ extension SearchViewController {
         
         viewModel.output.airports
             .drive( citiesTableView.rx.items(cellIdentifier: "airportCell", cellType: AirportTableViewCell.self)) { ( _, airport, cell ) in
-                cell.setCell(airport.iataCode!, "dd", airport.airportName!, airport.countryIso2!)
+                cell.setCell(airport.iataCode!, airport.airportName!, airport.countryIso2!)
             }
             .disposed(by: disposeBag)
         
