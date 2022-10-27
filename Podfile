@@ -8,7 +8,6 @@ target 'Airports' do
   # Pods for Airports
     pod 'RxSwift', '6.5.0'
     pod 'RxCocoa', '6.5.0'
-    pod 'ReactiveCoordinator', '4.0.0'
     pod 'ObjectMapper'
     pod 'SwiftLint'
 
