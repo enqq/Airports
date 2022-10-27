@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import ReactiveCoordinator
 
 class AppCoordinator: BaseCoordinator<Void> {
    
